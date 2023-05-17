@@ -1,0 +1,20 @@
+.dialogs{
+ display: grid;
+ grid-template-columns: 2fr 8fr;
+}
+.dialogsList{
+    padding: 20px;
+
+}
+.dialogsList .active{
+    color: hotpink;
+}
+.item{
+
+}
+.messages{
+    padding: 20px;
+}
+.message{
+
+}
