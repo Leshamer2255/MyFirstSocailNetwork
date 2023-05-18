@@ -1,0 +1,18 @@
+.nav {
+  background-color: wheat;
+  grid-area: n;
+  padding: 20px;
+  padding-top: 200px;
+}
+.item{
+  margin-top: 50px;
+  font-size: 30px;
+  text-shadow: 1px 1px 2px #000;
+}
+a{
+  text-decoration: none;
+}
+
+.active {
+  color: gold;
+}
