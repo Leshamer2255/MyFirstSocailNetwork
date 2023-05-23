@@ -10,10 +10,9 @@ const MyPosts = () => {
     { id: 4, message: 'I don`t understand what it happens', likesCount: 15 },
     { id: 5, message: 'Fight', likesCount: 111 }
   ]
- 
-  let postsElements = posts.
-    map(p => <Post massage={p.message} likeCount={p.likesCount} />);
 
+  let postsElements = 
+  posts.map(p => <Post massage={p.message} likeCount={p.likesCount} />);
 
   return (
     <div className={s.postBlock}>
