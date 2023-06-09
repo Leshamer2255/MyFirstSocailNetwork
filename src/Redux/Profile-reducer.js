@@ -15,18 +15,24 @@ let initialState = {
 const profileReducer = (state = initialState, action) => {
 
     switch(action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = {
             id: 6,
             message: state.newPostText,
             likesCount: 0
         };
-        state.posts.push(newPost);
-        state.newPostText = '';
-        return state;
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText; 
-        return state;
+        return {
+            ...state,
+            posts: [...state.posts, newPost],
+            newPostText: ''
+        };
+    }
+        case UPDATE_NEW_POST_TEXT: {
+        return {
+            ...state,
+            newPostText: action.newText
+        };
+    }
         default:
             return state;
     }
@@ -36,3 +42,39 @@ export const addPostActionCreator = () => ({type: ADD_POST,})
 export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text }) 
 
 export default profileReducer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let a = {    
+//   name:'pikatchu',
+//   protocol: 'htpps',
+//   maxStudentCount: 10,
+//   isOnline: true,
+//   students: ['van', 'drey', 'arid'],
+//   classroom: {
+//     teacher:{
+//       name:'Lesha',
+//       age:23  
+//     }
+//   }
+// }
+
+// let b = {...a};
+// b.classroom = {...a.classroom};
+// b.classroom.teacher = {...a.classroom.teacher};
+// b.students = [...a.students];
+
+// b.classroom.teacher.name = 'Ant0n';
+
+// console.log(b.classroom.teacher.name)

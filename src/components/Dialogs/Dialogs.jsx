@@ -7,11 +7,9 @@ const Dialogs = (props) => {
   let state = props.messagesPage;
 
 // Methods massive map ////
-    let dialogsElements= state.dialogsData.map(dialog => <DialogList name={dialog.name} id={dialog.id} />); 
-    let messagesElements= state.messagesData.map(message => <Message message={message.message} />);
+    let dialogsElements= state.dialogsData.map(dialog => <DialogList name={dialog.name} key={dialog.id} id={dialog.id} />); 
+    let messagesElements= state.messagesData.map(message => <Message message={message.message} key={message.id} />);
     let newMessageText= state.newMessageText;
-
-
 
   let onSendMessageClick = () => {
     props.sendMessage();
