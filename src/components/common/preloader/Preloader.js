@@ -4,7 +4,7 @@ import Sp from '../../../assets/images/Sp.gif';
 
 let Preloader = (props) => {
     return  <div>
-            <img src={Sp} /> 
+            <img  alt='' src={Sp} /> 
             </div>
 }
 

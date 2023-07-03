@@ -20,6 +20,9 @@ const Dialogs = (props) => {
     props.updateNewMessageText(body);
   }
 
+
+  alert(props.isAuth); 
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsList}>
