@@ -1,6 +1,7 @@
 .dialogs{
  display: grid;
  grid-template-columns: 2fr 8fr;
+ font-family: Arial, Helvetica, sans-serif;
 }
 .dialogsList{
     padding: 40px;
@@ -15,8 +16,14 @@
 
 }
 .messages{
-    padding: 20px;
-}
-.message{
+    margin: 0 auto;
 
 }
+.dialog{
+    background-color: antiquewhite;
+    border-radius: 80%;
+    padding: 20px;
+    margin: 20px;
+    
+}
+

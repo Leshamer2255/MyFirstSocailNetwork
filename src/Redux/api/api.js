@@ -5,7 +5,19 @@ const instance = axios.create({
     withCredentials: true
 })
 
-export const usersAPI ={
+export const profileAPI = {
+        getProfile(userId) {
+            return instance.get(`profile/` + userId); 
+        },
+        getStatus(userId) {
+            return instance.get(`profile/status/` + userId); 
+        },
+        updateStatus(status) {
+            return instance.put(`profile/status`, {status}); 
+        }
+    }
+
+    export const usersAPI = {
         getUser (currentPage, pageSize)  {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
             .then(Response => {
@@ -19,8 +31,8 @@ export const usersAPI ={
         return instance.delete(`follow/${userId}`)
         },
         getProfile(userId) {
-            return instance.get(`profile/` + userId); 
-
+            console.warn('Use old method need to change  him profileAPI')
+            return profileAPI.getProfile(userId);
         }
     }
 

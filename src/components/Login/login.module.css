@@ -1,0 +1,9 @@
+.header {
+    text-align: center;
+    margin-left: 250px;
+    margin-top: 200px;
+    background-color: green;
+    width: 500px;
+    border-radius: 10%;
+    color: blue
+};
