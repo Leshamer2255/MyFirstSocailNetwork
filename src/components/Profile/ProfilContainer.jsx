@@ -32,12 +32,13 @@ render() {
     )}
 }
 
-let mapStateToProps = (state) => ({
-  profile: state.profilePage.profile,
+let mapStateToProps = (state) => {
+  return ({ profile: state.profilePage.profile,
   status: state.profilePage.status,
   authUserId: state.auth.userId,
   isAuth: state.auth.isAuth
-});
+  })
+}
 
 export default compose (
   connect (mapStateToProps, {getUserProfile, getStatus, updateStatus}),
