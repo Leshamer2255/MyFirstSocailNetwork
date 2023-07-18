@@ -19,6 +19,11 @@ const AddPostFormRedux = reduxForm ({form: 'profilAddPostForm'}) (AddNewPost)
 
 
 const MyPosts = (props) => {
+
+  // shouldComponentUpdate (nextProps, nextState) {
+  //   return nextProps !== this.props || nextState !== this.state;
+  // }
+
   let postsElements = props.posts.map(p => <Post message={p.message} likeCount={p.likesCount} />);
   // let newPostElement = React.createRef();
 
@@ -36,6 +41,7 @@ const MyPosts = (props) => {
     </div>
   )
 }
+
 
 
 

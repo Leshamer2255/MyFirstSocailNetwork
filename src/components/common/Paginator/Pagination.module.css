@@ -1,0 +1,18 @@
+.allusers{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    margin-top: 60px;
+    font-family: serif;
+    font-size: 20px;
+
+}
+.userphoto{
+    width: 150px;
+    height: 100px;
+}
+.selectedPage{
+    font-weight: bold;
+    font-size: 30px;
+}
