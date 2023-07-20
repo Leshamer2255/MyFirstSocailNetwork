@@ -8,11 +8,22 @@
     font-size: 20px;
 
 }
-.userphoto{
-    width: 150px;
-    height: 100px;
+
+.pagination {
+    margin-left: 350px;
 }
-.selectedPage{
-    font-weight: bold;
+.pageNumber {
+    display: inline;
+    padding: 2px;
+    border: 1px solid grey;
+    background-color: beige;
+}
+.selectedPage {
+    color: blueviolet;
     font-size: 30px;
+    font-weight: bold;
+}
+.selectedPage:hover{
+    background-color: blue;
+    
 }
