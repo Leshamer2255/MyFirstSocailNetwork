@@ -1,9 +1,11 @@
+import { stopSubmit } from "redux-form";
 import { profileAPI, usersAPI } from "./api/api";
 
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_STATUS = 'SET_STATUS';
 const DELETE_POST = 'DELETE_POST';
+const SAVE_PHOTO_SUCCESS = 'SAVE_PHOTO_SUCCESS';
 
 let initialState = {
     posts:[
@@ -50,6 +52,12 @@ const profileReducer = (state = initialState, action) => {
                 posts: state.posts.filter(p => p.id !== action.postId)
             };
         }
+        case SAVE_PHOTO_SUCCESS: {
+            return {
+                ...state,   
+                profile: {...state.profile, photos: action.photos}
+            };
+        }
 
         default:
             return state;
@@ -60,6 +68,7 @@ export const addPostActionCreator = (newPostText) => ({type: ADD_POST,newPostTex
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile})
 export const setStatus = (status) => ({type: SET_STATUS, status})
 export const deletePost = (postId) => ({type: DELETE_POST, postId})
+export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
 
 
 export const getUserProfile = (userId) => async (dispatch) => {
@@ -78,6 +87,24 @@ export const updateStatus = (status) => async (dispatch) => {
         if (Response.data.resultCode === 0) {
         dispatch(setStatus(status));
         }
+}   
+
+export const savePhoto = (file) => async (dispatch) => {
+    let Response = await profileAPI.savePhoto(file)
+
+        if (Response.data.resultCode === 0) {
+        dispatch(savePhotoSuccess(Response.data.data.photos));
+        }
+}
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userId = getState().auth.userId;
+    let Response = await profileAPI.saveProfile(profile)
+
+        if (Response.data.resultCode === 0) {
+        dispatch(getUserProfile(userId));
+        } else {
+            dispatch(stopSubmit("edit-profile", {_error: Response.data.message[0]}));
+        }
 }
 
 export default profileReducer;
@@ -92,28 +119,3 @@ export default profileReducer;
 
 
 
-
-
-
-// let a = {    
-//   name:'pikatchu',
-//   protocol: 'htpps',
-//   maxStudentCount: 10,
-//   isOnline: true,
-//   students: ['van', 'drey', 'arid'],
-//   classroom: {
-//     teacher:{
-//       name:'Lesha',
-//       age:23  
-//     }
-//   }
-// }
-
-// let b = {...a};
-// b.classroom = {...a.classroom};
-// b.classroom.teacher = {...a.classroom.teacher};
-// b.students = [...a.students];
-
-// b.classroom.teacher.name = 'Ant0n';
-
-// console.log(b.classroom.teacher.name)

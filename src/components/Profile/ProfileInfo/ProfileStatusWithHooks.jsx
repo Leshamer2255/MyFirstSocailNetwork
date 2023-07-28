@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import s from './ProfileInfo.module.css';
 
 
 // let arr = [0, () => {}];
@@ -28,7 +29,7 @@ useEffect( () => {
     }
 
     return (
-    <div>
+    <div className={s.status}>
         {! editMode && 
             <div>
                 <span onDoubleClick={activeEditMode}>{props.status || "No status"}</span>

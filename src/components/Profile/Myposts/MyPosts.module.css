@@ -1,8 +1,11 @@
 .postBlock{
   padding: 20px;
-  text-align: center;
 }
 .posts{
   margin-top: 20px;
-
+}
+.button{
+  width: 100px;
+    background-color: blanchedalmond;
+    border-radius: 20%;
 }

@@ -11,7 +11,7 @@ const AddNewPost = (props) => {
   return (
   <form onSubmit={props.handleSubmit}>
         <div><Field component={Textarea} name='newPostText' validate={[required, maxLength]}/></div>
-        <div><button>Add post</button></div>
+        <div><button className={s.button}>POSTIK</button></div>
   </form>
   )
 }
@@ -24,7 +24,7 @@ const MyPosts = (props) => {
   //   return nextProps !== this.props || nextState !== this.state;
   // }
 
-  let postsElements = props.posts.map(p => <Post message={p.message} likeCount={p.likesCount} />);
+  let postsElements = props.posts.map(p => <Post key={p.id} message={p.message} likeCount={p.likesCount} />);
   // let newPostElement = React.createRef();
 
   let onAddPost = (values) => {
@@ -33,7 +33,7 @@ const MyPosts = (props) => {
 
   return (
     <div className={s.postBlock}>
-      <h2>MY POST</h2>
+      <h2>POST</h2>
     <AddPostFormRedux onSubmit={onAddPost}/>
       <div className={s.posts}>
         {postsElements}
