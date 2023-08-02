@@ -8,7 +8,7 @@ let Users = ({user, followingInProgress, unfollow, follow}) => {
                 <div className={styles.allusers}>  
                     <div>
                         <NavLink to={'./../profile/' + user.id}>
-                        <img alt="JONH" src={ user.photos.small != null ? user.photos.small: userPhoto } 
+                        <img alt="JONH" src={ user.photos.small != null ? user.photos.small : userPhoto } 
                         className={styles.userphoto}/>
                         </NavLink>
                     </div>
@@ -21,10 +21,10 @@ let Users = ({user, followingInProgress, unfollow, follow}) => {
                         onClick={() => {follow(user.id);
                             }}>Follow</button> }
                     </div>
-                    <div>{user.name}</div>
+                    <div className={styles.name}>{user.name}</div>
                     <div>{user.status}</div>
-                    <div>{"user.location.country"}</div>
-                    <div>{"user.location.city"}</div>
+                    <div>{user.id}</div>
+                    <div></div>
                 </div>
             </div>
         }

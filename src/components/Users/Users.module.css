@@ -11,8 +11,14 @@
 .userphoto{
     width: 150px;
     height: 100px;
+    border: solid 3px skyblue;
+    border-radius: 40px;
 }
 .selectedPage{
     font-weight: bold;
     font-size: 30px;
+}
+.name{
+    font-size: 18px;
+    font-weight: bold;
 }

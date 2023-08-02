@@ -1,17 +1,48 @@
 .nav {
-  background-color: wheat;
   grid-area: n;
-  padding: 20px;
-  padding-top: 200px;
+  padding: 5px;
+  margin-top: -70px;
+  margin-left: 200px;
 }
+
+.item {
+  display: inline;
+  margin: 20px;
+}
+
 .item img {
-  width: 50px;
-  margin-top: 30px;
+  width: 40px;
 }
-a{
+
+a {
   text-decoration: none;
 }
 
 .active {
-  background-color: gold;
+  padding: 22px 20px;
+  background-color: rgb(106, 226, 240);
+  border-radius: 20px;
+  box-shadow: 7px 6px 20px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.7s all;
 }
+
+
+/* button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #8bdc00;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px  #7ac70c;
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(5px);
+} */

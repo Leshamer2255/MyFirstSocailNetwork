@@ -1,17 +1,14 @@
 .header {
   grid-area: h;
-  background-color: rgb(211, 155, 64);
-  border: solid 1px black ;
+  background-color: rgb(118, 226, 245) ;;
+  border: solid 2px rgb(7, 164, 192) ;
 }
 .title{
-  position: relative;
-  top: 47px;
-  font-size: 30px;
+  margin-top: 5px;
 }
 .loginBlock {
   margin-bottom: 20px;
   font-size: 20px;
-  float: right;
 }
 .loginBlock a{
   color:aquamarine;

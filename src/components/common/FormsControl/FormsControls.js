@@ -27,7 +27,7 @@ export const Input = ({input, meta, ...props}) => {
 }
 
 export const createField = (placeholder, name, validators , component, props = {}, text = "") => (
-    <div>
+    <div className={s.formain}> 
     <Field placeholder={placeholder} name={name} validate={validators}  component={component} {...props}  /> {text}
     </div>
 )

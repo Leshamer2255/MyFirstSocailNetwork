@@ -6,7 +6,8 @@ const Post = (props) => {
 
   return (
     <div className={s.item}>
-      <img alt='' src='https://a.rgbimg.com/users/z/ze/zela/300/p3echCE.jpg'></img>
+      <img src='https://social-network.samuraijs.com/activecontent/images/users/29370/user.jpg?v=2' alt=""></img>
+      <span className={s.text}>@Gostling</span>
       {props.message}
       <button className={s.button}>Like</button>
       {props.likeCount}

@@ -20,8 +20,8 @@ const LoginForm = ({handleSubmit, error}) => {
                { error}
             </div>
             }
-            <div>
-                <button>Login</button>
+            <div className={s.Enter}>
+                <button>ENTER</button>
             </div>
         </form>
     )
@@ -40,7 +40,7 @@ const Login = (props) => {
 
 
     return <div className={s.header}>
-        <h1>Login</h1>
+        <h1 className={s.title}>Hellow,Log in your account AnimeGrame</h1>
         <LoginReduxForm onSubmit={onSubmit}/>
     </div>
 }

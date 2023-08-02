@@ -5,7 +5,6 @@ import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import { useState } from 'react';
 import ProfileDataForm from './ProfileDataForm';
 
-
 const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, saveProfile }) => {
 
     let [editMode, setEditMode] = useState(false);
@@ -31,11 +30,13 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
       <div className={s.descriptionBlock}>
         <img src={profile.photos.large || userPhoto} className={s.user} alt=""></img>
         {isOwner && <input type={"file"} onChange={onPhotoSelected} />}
-        <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
       </div>
+      <div>
       {editMode 
       ? <ProfileDataForm initialValues={profile} profile={profile} onSubmit={onSubmit}/> 
       : <ProfileData toEditMode={ () => {setEditMode(true)}} profile={profile} isOwner={isOwner}/>}
+      <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
+      </div>
     </div>
 
   )
@@ -43,7 +44,7 @@ const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto, savePr
 
 const ProfileData = ({profile, isOwner, toEditMode}) => {
   return  <div className={s.infoBlock}>
-      {isOwner && <div><button className={s.button}  onClick={toEditMode}>edit</button></div>}
+      {isOwner && <div><button className={s.button} onClick={toEditMode}></button></div>}
         <div>
           <div>
             <b>Full name</b>: {profile.fullName}

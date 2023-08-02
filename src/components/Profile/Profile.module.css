@@ -1,3 +1,11 @@
 .mainBlock{
-    background-color: wheat;
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 1250px;
+    background-color: white;
+    border-radius: 14%;
+    border: solid blue 2px;
+}
+.infoBlock{
+    
 }
