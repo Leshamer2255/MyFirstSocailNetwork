@@ -1,4 +1,4 @@
-import profileReducer, { addPostActionCreator } from "./Profile-reducer"
+import profileReducer, { addPostActionCreator } from "./Profile-reducer.ts"
 
 it ('new post should be added without mistakes', () => {
     // test data
