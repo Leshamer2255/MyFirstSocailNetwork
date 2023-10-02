@@ -2,7 +2,7 @@ import './App.css';
 import Nav from './components//Navbar/Nav';
 import { Route, Routes } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import UsersContainer from './components/Users/UsersContainer';
+import UsersContainer from './components/Users/UsersContainer.tsx';
 import ProfileContainer, { withRouter } from './components/Profile/ProfilContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/login';
